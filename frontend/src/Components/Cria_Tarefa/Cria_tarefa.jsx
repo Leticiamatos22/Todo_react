@@ -62,7 +62,8 @@ function Cria_Tarefa(){
                         onClick = {adiciona} />
             </div>
 
-            <div className="TarefasCriadas">
+            {temItem && 
+                <div className="TarefasCriadas">
                 <h4>Você tem {tarefas.length} tarefas criadas</h4>
                 {tarefas.map((tarefa, index)=>{
                     return(
@@ -74,10 +75,10 @@ function Cria_Tarefa(){
                     )
                 })}
 
-                {temItem && <button
-                                onClick={apagaTudo}> Apagar Tudo</button>}
+                <button onClick={apagaTudo}> Apagar Tudo</button>
 
             </div>
+            }
 
         </div>
     )
