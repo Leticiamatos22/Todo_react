@@ -26,8 +26,6 @@ function Cria_Tarefa(){
     	}
   }
     
-    		
-        
 
     function apagaItem(item){
         var lista_temp = [...tarefas]
@@ -40,6 +38,11 @@ function Cria_Tarefa(){
         	setTemItem(false)
         }
 
+    }
+
+    function apagaTudo(){
+        setTarefas([])
+        setTemItem(false)
     }
 
 
@@ -71,11 +74,8 @@ function Cria_Tarefa(){
                     )
                 })}
 
-                {tarefas.length > 0 && (
-                    <button type='button' >
-                        Apagar
-                    </button>
-                )}
+                {temItem && <button
+                                onClick={apagaTudo}> Apagar Tudo</button>}
 
             </div>
 
